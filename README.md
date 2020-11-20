@@ -1,11 +1,11 @@
-# Todo List (Vue.js)
+# ☑️ Todo List (Vue.js)
 
 `Vue.js`로 만들어보는 todo list
 (vue fundamental)
 
 <br>
 
-## Project & Package 구성
+## 🏷️ Project & Package 구성
 
 ### Project 시작
 
@@ -16,15 +16,16 @@ $ npm init -y
 
 ### Package 설치
 
-Vue Project 개발을 위한 패키지 설치
+Vue Project 개발을 위한 패키지 설치  
+(package 변경사항에 대한 내용은 issue 기록)
 
-#### Webpack 관련 모듈 설치
+#### ✔️ Webpack 관련 모듈 설치
 ```cmd
 $ npm i -D webpack webpack-cli webpack-dev-server webpack-merge
 ```
 bundling을 위한 Webpack 모듈 설치
 
-#### Babel 설치
+#### ✔️ Babel 설치
 
 ```cmd
 $ npm i -D @babel/core @babel/preset-env babel-loader
@@ -33,7 +34,7 @@ $ npm i @babel/polyfill (Optional)
 ```
 설치 후 `.babelrc` 설정 추가(`@babel/preset-env`)
 
-#### Vue 설치
+#### ✔️ Vue 설치
 
 ```cmd
 $ npm i -D vue-template-compiler vue-loader vue-style-loader css-loader
@@ -43,7 +44,7 @@ $ npm i -D vue-template-compiler vue-loader vue-style-loader css-loader
 - `vue-style-loader`: `<style>` 해석
 - `<script>` 는 `babel-loader`로 해석
 
-#### CSS 관련 설치
+#### ✔️ CSS 관련 설치
 
 > Preprocessor - CSS - Postcss
 
@@ -61,7 +62,7 @@ $ npm i -D autoprefixer postcss-loader postcss
   - `package.json`: `browserslist` 속성 설정필요
 
 
-## Webpack Build
+## 🏷️ Webpack Build
 
 ### Windows Base
 ```$cmd 
