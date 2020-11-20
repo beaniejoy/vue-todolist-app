@@ -1,0 +1,3 @@
+{
+    "presets": ["@babel/preset-env"] // 지원 스펙을 알아서 지정해준다.
+}
