@@ -6,14 +6,16 @@
 export default {
     data () {
          return {
-             msg: 'Hello Vue!'
+             msg: 'Hello Joybeanie GOGO!'
          }
     }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$color: gray;
 h1 {
-    color: red;
+    color: $color;
+    display: flex;
 }
 </style>
