@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
 
 new Vue({
-    el: '#app',
+  el: '#app',
 
-    // callback func
-    // render (createElement) {
-    //     return createElement(App)
-    // },
-    render: h => h(App),
+  // callback func
+  // render (createElement) {
+  //     return createElement(App)
+  // },
+  render: h => h(App)
 })

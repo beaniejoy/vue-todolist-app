@@ -2,10 +2,16 @@
   "name": "vue-todo-app",
   "version": "1.0.0",
   "description": "todo list app with Vue.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanbinleejoy/vue-todolist-app"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "keywords": [
     "vue",
@@ -21,10 +27,18 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "autoprefixer": "^10.0.2",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.3.2",
     "css-loader": "^5.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^7.1.0",
     "html-webpack-plugin": "^4.5.0",
     "node-sass": "^5.0.0",
     "postcss": "^8.1.8",
@@ -40,6 +54,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "crypto-random-string": "^3.3.0",
+    "lodash": "^4.17.20",
+    "lowdb": "^1.0.0",
     "vue": "^2.6.12"
   }
 }

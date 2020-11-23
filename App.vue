@@ -1,21 +1,13 @@
 <template>
-    <h1>{{ msg }}</h1>
+    <todo-app />
 </template>
 
 <script>
+import TodoApp from './components/TodoApp'
+
 export default {
-    data () {
-         return {
-             msg: 'Hello Joybeanie GOGO!'
-         }
+    components: {
+        TodoApp, //'todo-app': TodoApp (dash-case < PascalCase)
     }
 }
 </script>
-
-<style lang="scss" scoped>
-$color: gray;
-h1 {
-    color: $color;
-    display: flex;
-}
-</style>

@@ -53,7 +53,8 @@ $ npm i -D sass-loader node-sass
 $ npm i -D autoprefixer postcss-loader postcss
 ```
 - preprocessor
-  - `node-sass`: sass를 compile을 할 수 있게 해준다. (sass를 node 환경에서 binding해서 사용할 수 있게 한다.)
+  - `node-sass`: sass를 compile을 할 수 있게 해준다.  
+     (sass를 node 환경에서 binding해서 사용할 수 있게 한다.)
   - `sass-loader`: webpack에서 `.scss`를 처리하기 위한 loader
 - postcss
   - `autoprefixer`: 공급업체 접두사를 붙여주는 모듈(IE, Chrome, Firefox...에 해당하는 접두사 > `-webkit-`, `-ms-`, `-o-`, ...)
@@ -61,6 +62,19 @@ $ npm i -D autoprefixer postcss-loader postcss
   - `postcss.config.js`: postcss에 대한 설정파일로 `autoprefixer` 설정
   - `package.json`: `browserslist` 속성 설정필요
 
+
+#### ✔️ localStorage 관련 설치
+
+```cmd
+$ npm i lodash lowdb
+```
+- [`lowdb`](https://github.com/typicode/lowdb)
+  - Small JSON database for Node, Electron and the browser. Powered by Lodash.
+  - JSON형태의 간단한 DB (browser localStorage 지원)
+- [`lodash`](https://lodash.com/docs/#defaults)
+  - lowdb를 다룰 수 있게 해주는 일종의 도구
+
+<br>
 
 ## 🏷️ Webpack Build
 
