@@ -21,9 +21,10 @@ Vue Project 개발을 위한 패키지 설치
 
 #### ✔️ Webpack 관련 모듈 설치
 ```cmd
-$ npm i -D webpack webpack-cli webpack-dev-server webpack-merge
+$ npm i -D webpack@^4 webpack-cli webpack-dev-server webpack-merge
 ```
-bundling을 위한 Webpack 모듈 설치
+- bundling을 위한 Webpack 모듈 설치
+- `webpack@^4`: polyfill과 충돌 에러 발생을 방지(downgrade)
 
 #### ✔️ Babel 설치
 
@@ -73,6 +74,15 @@ $ npm i lodash lowdb
   - JSON형태의 간단한 DB (browser localStorage 지원)
 - [`lodash`](https://lodash.com/docs/#defaults)
   - lowdb를 다룰 수 있게 해주는 일종의 도구
+
+#### ✔️ Date 데이터 제어를 위한 모듈
+
+```cmd
+$ npm i dayjs
+```
+- `Moment.js` > 무거운 library
+- `Day.js` > `Moment.js`의 문법을 그대로 사용하되 경량화해서 사용 가능
+
 
 <br>
 
