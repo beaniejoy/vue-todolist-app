@@ -12,7 +12,13 @@ module.exports = (env, opts) => {
   const config = {
     // 중복되는 옵션들...
     resolve: {
-      extensions: ['.vue', '.js'] // import할 때 확장자 생략 가능
+      extensions: ['.vue', '.js'], // import할 때 확장자 생략 가능
+      // 절대 경로 별칭 설정 가능(alias)
+      alias: {
+        '~': path.join(__dirname),
+        'scss': path.join(__dirname, './scss') // 스타일 전용 경로
+      }
+
       // fallback: {
       //   util: require.resolve('util/'),
       //   crypto: require.resolve('crypto-browserify'),

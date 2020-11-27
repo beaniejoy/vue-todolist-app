@@ -1,13 +1,13 @@
 <template>
-    <todo-app />
+  <div>
+    <!-- Home 버튼 공통부분 -->
+    <router-link 
+      to="/" 
+      class="to-home">
+      <i class="material-icons">home</i>
+    </router-link>
+
+    <router-view />
+  </div>  
 </template>
 
-<script>
-import TodoApp from './components/TodoApp'
-
-export default {
-  components: {
-    TodoApp // 'todo-app': TodoApp (dash-case < PascalCase)
-  }
-}
-</script>

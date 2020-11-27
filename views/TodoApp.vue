@@ -3,17 +3,17 @@
 
         <div class="todo-app__actions">
             <div class="filters">
-                <button 
+                <button
                     :class="{ active: filter ==='all' }"
                     @click="changeFilter('all')">
                     모든 항목 ({{ total }})
                 </button>
-                <button 
+                <button
                     :class="{ active: filter === 'active' }"
                     @click="changeFilter('active')">
                     해야 할 항목 ({{ activeCount }})
                 </button>
-                <button 
+                <button
                     :class="{ active: filter==='completed' }"
                     @click="changeFilter('completed')">
                     완료된 항목 ({{ completedCount }})
@@ -22,13 +22,28 @@
 
             <div class="actions clearfix">
                 <div class="float--left">
-                  <input
-                    v-model="allDone" 
+                  <label>
+                    <input
+                    v-model="allDone"
                     type="checkbox" />
+                    <span class="icon"><i class="material-icons">done_all</i></span>
+                  </label>
                 </div>
-                <div class="float--right">
-                  <button @click="clearCompleted">
-                    완료된 항목 삭제
+                <div class="float--right clearfix">
+                  <button
+                    class="btn float--left"
+                    @click="scrollToTop">
+                    <i class="material-icons">expand_less</i>
+                  </button>
+                  <button
+                    class="btn float--left"
+                    @click="scrollToBottom">
+                    <i class="material-icons">expand_more</i>
+                  </button>
+                  <button
+                    class="btn btn--danger float--left"
+                    @click="clearCompleted">
+                    <i class="material-icons">delete_sweep</i>
                   </button>
                 </div>
             </div>
@@ -43,8 +58,6 @@
                 @delete-todo="deleteTodo"
             />
         </div>
-
-        <hr />
 
         <todo-creator
             class="todo-app__creator"
@@ -61,8 +74,9 @@ import _find from 'lodash/find'
 import _assign from 'lodash/assign'
 import _findIndex from 'lodash/findIndex'
 import _forEachRight from 'lodash/forEachRight'
-import TodoCreator from './TodoCreator'
-import TodoItem from './TodoItem'
+import scrollTo from 'scroll-to'
+import TodoCreator from '~/components/TodoCreator'
+import TodoItem from '~/components/TodoItem'
 
 export default {
   components: {
@@ -77,7 +91,7 @@ export default {
     }
   },
   computed: {
-      // 3개 항목에 따라 filter된 todos list항목
+    // 3개 항목에 따라 filter된 todos list항목
     filteredTodos () {
       switch (this.filter) {
         case 'all':
@@ -90,13 +104,13 @@ export default {
       }
     },
     total () {
-        return this.todos.length
+      return this.todos.length
     },
-    activeCount() {
-        return this.todos.filter(todo => !todo.done).length
+    activeCount () {
+      return this.todos.filter(todo => !todo.done).length
     },
-    completedCount() {
-        return this.total - this.activeCount
+    completedCount () {
+      return this.total - this.activeCount
     },
     // 모든 항목 완료 체크 (일괄처리)
     allDone: {
@@ -237,9 +251,21 @@ export default {
 
       // 2) lodash 문법 사용
       _forEachRight(this.todos, todo => {
-        if(todo.done) {
+        if (todo.done) {
           this.deleteTodo(todo)
         }
+      })
+    },
+    scrollToTop () {
+      scrollTo(0, 0, {
+        ease: 'linear', // 스크롤 강도 조절
+        duration: 1000 // 스크롤 속도 조절(default: 1000)
+      })
+    },
+    scrollToBottom () {
+      scrollTo(0, document.body.scrollHeight, {
+        ease: 'linear',
+        duration: 1000
       })
     }
   }
@@ -247,5 +273,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "../scss/style"
+    @import "scss/style";
 </style>
