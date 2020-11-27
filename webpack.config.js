@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require("webpack");
+const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
@@ -12,7 +12,7 @@ module.exports = (env, opts) => {
   const config = {
     // 중복되는 옵션들...
     resolve: {
-      extensions: ['.vue', '.js'], // import할 때 확장자 생략 가능
+      extensions: ['.vue', '.js'] // import할 때 확장자 생략 가능
       // fallback: {
       //   util: require.resolve('util/'),
       //   crypto: require.resolve('crypto-browserify'),
@@ -30,7 +30,7 @@ module.exports = (env, opts) => {
     // 결과물에 대한 설정
     output: {
       filename: '[name].js',
-      path: path.join(__dirname, 'dist'),
+      path: path.join(__dirname, 'dist')
     },
     module: {
       rules: [
@@ -104,8 +104,8 @@ module.exports = (env, opts) => {
       },
       plugins: [
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify('development'),
-        }),
+          'process.env.NODE_ENV': JSON.stringify('development')
+        })
       ]
     })
   }
@@ -117,7 +117,7 @@ module.exports = (env, opts) => {
       // 용량이 적고 최적화된 번들
       devtool: 'cheap-module-source-map',
       plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
       ]
     })
   }
