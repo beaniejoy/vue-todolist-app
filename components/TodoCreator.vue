@@ -33,7 +33,9 @@ export default {
       }
 
       // 생성
-      this.$emit('create-todo', this.title) // 부모 component로 올림 (event 이름)
+      // this.$emit('create-todo', this.title) // 부모 component로 올림 (event 이름)
+      // Module 이름까지 넣어야 한다.
+      this.$store.dispatch('todoApp/createTodo', this.title)
       this.title = ''
 
       // mouse point를 맨 아래로

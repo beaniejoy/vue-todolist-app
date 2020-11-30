@@ -90,6 +90,14 @@ $ npm i dayjs
 - `Moment.js` > 무거운 library
 - `Day.js` > `Moment.js`의 문법을 그대로 사용하되 경량화해서 사용 가능
 
+#### ✔️ Vuex 모듈을 통한 Store 관리
+
+```powershell
+$ npm i vuex
+```
+- 일반적인 부모, 자식 컴퍼넌트간에 데이터 이동은 수용 가능(props, emit을 통한)
+- 컴퍼넌트 관계가 복잡하지면 데이터 전달에 있어서 중간 과정이 쓸데없이 많아질 수 있다.
+- 데이터들을 전역으로 관리해주는 것이 Store > Store를 제공해주는 모듈 `Vuex`
 
 <br>
 

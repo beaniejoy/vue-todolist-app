@@ -144,10 +144,15 @@ export default {
     },
     // 부모 component인 TodoApp에 전달
     updateTodo (value) {
-      this.$emit('update-todo', this.todo, value)
+      // this.$emit('update-todo', this.todo, value)
+      this.$store.dispatch('todoApp/updateTodo', {
+        todo: this.todo,
+        value
+      })
     },
     deleteTodo () {
-      this.$emit('delete-todo', this.todo)
+      // this.$emit('delete-todo', this.todo)
+      this.$store.dispatch('todoApp/deleteTodo', this.todo)
     }
   }
 }
