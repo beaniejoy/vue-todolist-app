@@ -117,3 +117,9 @@ $ npx webpack serve --mode production
 ```$cmd
 $ webpack --mode production
 ```
+
+<br>
+
+## 🏷️ Reference
+
+[Heropy Vue.js TodoApp Github](https://github.com/HeropCode/Vue-Todo-app)
